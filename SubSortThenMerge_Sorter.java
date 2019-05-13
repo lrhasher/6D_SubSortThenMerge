@@ -23,8 +23,8 @@ public class SubSortThenMerge_Sorter extends Sorter {
     }
 
     private void mergeSort(int start , int end) {
-        if( end - start > 1){
-            int middle = (start + end) / 2;
+        int middle = start + (start + end + 1) / 2;
+        if( middle < end){
             mergeSort(start , middle);
             mergeSort(middle , end);
             merge(start, middle, end);
